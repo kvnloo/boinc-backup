@@ -74,7 +74,7 @@ if [ $? -ne 0 ]; then cd ..; exit 1; fi
 cd gtest
 cmake ../unit-tests
 if [ $? -ne 0 ]; then cd ../..; exit 1; fi
-make
+make -j $(nproc --all)
 if [ $? -ne 0 ]; then cd ../..; exit 1; fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
